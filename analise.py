@@ -21,10 +21,10 @@ def extrair_cdi():
         response = requests.get(url = URL)
         response.raise_for_status()
     except requests.HTTPError as exc:
-        exch(status = "alert", message = "Dado não encontrado, continuando.", prefix = "Alerta: ")
+        exch(status = "alert", message = "Dado não encontrado, continuando.", prefix = "Alerta")
         cdi = None
     except Exception as exc:
-        exch(status = "error", message = "Parando a execução.", prefix = "ERRO: ")
+        exch(status = "error", message = "Parando a execução.", prefix = "ERRO")
         raise exc
     else:
         dado = json.loads(response.text)[-1]['valor']
@@ -75,6 +75,6 @@ extrair_cdi()
 try:
     exportar_dados(dados = "./taxa-cdi.csv", nome_saida = argv[1])
 except IndexError:
-    exch(message = "Falha ao exportar o gráfico. Argumentos Inválidos", status = "error", prefix = "ERRO: ")
+    exch(message = "Falha ao exportar o gráfico. Argumentos Inválidos", status = "error", prefix = "ERRO")
 else:
     exch(message = "Gráfico exportado com sucesso.", status = "OK")
