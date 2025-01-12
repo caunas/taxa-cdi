@@ -49,7 +49,7 @@ def extrair_cdi():
             # Salvando dados no arquivo "taxa-cdi-csv"
 
         with open(file='./taxa-cdi.csv', mode='a', encoding='utf8') as fp:
-            fp.write(f"{data}, {hora}, {cdi}")
+            fp.write(f"{data}, {hora}, {cdi}\n")
         
         sleep(1)
 
