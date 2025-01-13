@@ -5,4 +5,7 @@
 taxa-cdi.csv
 grafico.png
 
+extracao.py
+visualizacao.py
+
 /__pycache__
