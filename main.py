@@ -64,8 +64,8 @@ def exportar_dados(dados: str, nome_saida: str):
 
     # Salvando no grafico
 
-    grafico = sns.lineplot(x=df['hora'], y=df['taxa'])
-    _ = grafico.set_xticklabels(labels=df['hora'], rotation=90)
+    grafico = sns.lineplot(x=df['Data'], y=df['Valor'])
+    _ = grafico.set_xticklabels(labels=df['Data'], rotation=90)
     grafico.get_figure().savefig(f"{nome_saida}.png")
 
 
