@@ -14,7 +14,7 @@ from lib.exceptionhandler import exceptionhandler as exch
 def extrair_cdi():
     def montar_csv(dados):
         try:
-            with open(file = './taxa-cdi.csv', mode = 'w', encoding='uf8') as fp:
+            with open(file = './taxa-cdi.csv', mode = 'w', encoding='utf8') as fp:
                 #escrevendo cabeçalho
                 fp.write('Data,Valor\n')
                 
