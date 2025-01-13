@@ -19,8 +19,8 @@ def extrair_cdi():
                 fp.write('Data,Valor\n')
                 
                 #preenchendo arquivo com os dados
-                for i in range(1, 11):
-                    fp.write(f"{dados[-i]['data']},{float(dados[-i]['valor'])}\n")
+                for i in range(11, 0, -1):
+                    fp.write(f"{dados[len(dados)-i]['data']},{float(dados[len(dados)-i]['valor'])}\n")
         except Exception as exc:
             exch(status = "error", message = f"{exc}", prefix = "ERRO")
             raise exc
@@ -65,7 +65,7 @@ def exportar_dados(dados: str, nome_saida: str):
     # Salvando no grafico
 
     grafico = sns.lineplot(x=df['Data'], y=df['Valor'])
-    _ = grafico.set_xticklabels(labels=df['Data'], rotation=90)
+    _ = grafico.set_xticklabels(labels=df['Data'], rotation=30)
     grafico.get_figure().savefig(f"{nome_saida}.png")
 
 
