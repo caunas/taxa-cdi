@@ -12,16 +12,21 @@ from sys import argv
 from lib.exceptionhandler import exceptionhandler as exch
 
 def extrair_cdi():
-    """
     def montar_csv(dados):
-
-        # verifica se o arquivo taxa-cdi ja existe
-        if os.path.exists("./taxa-cdi.csv"):
-            with open
-            
-            for i in range(1, 11):
-                print(dados[-i])
-    """
+        try:
+            with open(file = './taxa-cdi.csv', mode = 'w', enconding='uf8') as fp:
+                #escrevendo cabeçalho
+                fp.write('Data,Valor\n')
+                
+                #preenchendo arquivo com os dados
+                for i in range(1, 11):
+                    fp.write(f"{dados[-i]['data']},{float(dados[-i]['valor'])}\n")
+        except Exception as exc:
+            exch(status = "error", message = f"{exc}", prefix = "ERRO")
+            raise exc
+        else:
+            exch(message = "'taxa-cdi.csv' salvo com sucesso.", status = "ok" )
+    
 
 
     print("Obtendo taxa CDI...")
@@ -48,7 +53,6 @@ def extrair_cdi():
             qtd_datas += 1
 
         print(f"""{qtd_datas} datas encontradas""")
-    #exch(message = "Taxa CDI capturada com sucesso.", status = "ok" )
 
     sleep(1)
 
