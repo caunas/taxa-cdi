@@ -62,7 +62,7 @@ Foram encontradas {qtd_registros} registros no banco de dados, selecione uma op�
 
 1. Exportar todos os registros
 2. Exportar os ultimos 10 registros (recomendado)
-3. Exportar uma quantidade especifica de dados              
+3. Exportar uma quantidade especifica de registros              
             """)
         while True:
             escolha = int(input("Opção: "))
@@ -74,7 +74,7 @@ Foram encontradas {qtd_registros} registros no banco de dados, selecione uma op�
                 montar_csv(dados = dados, linhas = 10)
                 break
             elif escolha == 3:
-                qtd_escolhida = int(input("Digite a quantidade de dados: "))
+                qtd_escolhida = int(input("Digite a quantidade de registros: "))
                 montar_csv(dados = dados, linhas = qtd_escolhida)
             else:
                 exch(status = "error", message = "Opção inválida, tente novamente", prefix = "ERRO")
