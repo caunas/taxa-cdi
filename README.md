@@ -77,4 +77,4 @@ python main.py <nome_do_grafico>
 ## Considerações Finais
 O programa roda de forma fluida e trata as exceções corretamente, pode facilmente ser adaptado para o backend de um sistema mais complexo
 
-Muito obrigado @andrecs2 pelas dicas
+Muito obrigado [@andrecs2](https://github.com/andrecs2) pelas dicas
