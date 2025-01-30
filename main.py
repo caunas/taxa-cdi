@@ -77,7 +77,7 @@ def extrair_cdi():
 Foram encontradas {qtd_registros} registros no banco de dados, selecione uma opção:.
 
 1. Exportar todos os registros
-2. Exportar os ultimos 10 registros (recomendado)
+2. Exportar os ultimos 12 registros (recomendado)
 3. Exportar uma quantidade especifica de registros              
             """)
         while True:
@@ -87,7 +87,7 @@ Foram encontradas {qtd_registros} registros no banco de dados, selecione uma op�
                 montar_csv(dados = dados, linhas = qtd_registros)
                 break
             elif escolha == 2:
-                montar_csv(dados = dados, linhas = 10)
+                montar_csv(dados = dados, linhas = 12)
                 break
             elif escolha == 3:
                 qtd_escolhida = int(input("Digite a quantidade de registros: "))
