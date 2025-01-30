@@ -21,8 +21,24 @@ def extrair_cdi():
                 fp.write('Data,Valor\n')
                 
                 #preenchendo arquivo com os dados
-                for i in range(linhas, 0, -1): # laço for funciona em ordem descrescente 
-                    fp.write(f"{dados[len(dados)-i]['data']},{float(dados[len(dados)-i]['valor'])}\n") # escrevendo linha
+                # mes e ano atual, importante para reorganizar os dados a serem exportados
+                data_atual = datetime.strftime(datetime.now(), '%Y/%m/%d').split(sep = "/")
+                ano = int(data_atual[0])
+                mes = int(data_atual[1])
+                for i in range(linhas, 0, -1): # laço for funciona em ordem descrescente
+                    data_requisicao = f"01/{mes:02}/{ano}"
+
+                    linha_encontrada = None
+                    for item in dados:
+                        if item['data'] == data_requisicao:
+                            linha_encontrada = item
+                            fp.write(f"{item['data']},{float(item['valor'])}\n") # escrevendo linha
+                    
+                    mes -=1
+                    
+                    if mes == 0:
+                        mes = 12
+                        ano -= 1
         except Exception as exc:
             #caso aconteça um erro, ele vai passar pelo exch
             exch(status = "error", message = f"{exc}", prefix = "ERRO") 
