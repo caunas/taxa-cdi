@@ -1,6 +1,6 @@
 ## Sobre:
 
-O programa consiste em consultar o valor da taxa CDI ao longos dos anos através da api do banco central, exportar em um arquivo csv e gerar um gráfico com os dados exportados. O usuário pode escolher o nome do arquivo do gráfico
+O programa consiste em consultar o valor da taxa CDI ao longos dos anos através da api do banco central, exportar em um arquivo csv e gerar um gráfico com os dados exportados. O usuário pode escolher o nome do arquivo do gráfico.
 
 ## Pré-requisitos
 É necessário ter o python (recomendada a versáo 3.11), o git, e o pip instalados na máquina
@@ -73,3 +73,8 @@ pip install -r requirements.txt
 ```
 python main.py <nome_do_grafico>
 ```
+
+## Considerações Finais
+O programa roda de forma fluida e trata as exceções corretamente, pode facilmente ser adaptado para o backend de um sistema mais complexo
+
+Muito obrigado [@andrecs2](https://github.com/andrecs2) pelas dicas
