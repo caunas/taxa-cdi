@@ -92,6 +92,7 @@ Foram encontradas {qtd_registros} registros no banco de dados, selecione uma op�
             elif escolha == 3:
                 qtd_escolhida = int(input("Digite a quantidade de registros: "))
                 montar_csv(dados = dados, linhas = qtd_escolhida)
+                break
             else:
                 exch(status = "error", message = "Opção inválida, tente novamente", prefix = "ERRO")
                 continue
