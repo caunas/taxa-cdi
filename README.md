@@ -62,8 +62,8 @@ pip3 --version
 ## Build
 1. Clone o repositório
 ```
-git clone https://github.com/caunas/automatic-invention
-cd automatic-invention
+git clone https://github.com/caunas/taxa-cdi
+cd taxa-cdi
 ```
 2. Instale as dependências
 ```
